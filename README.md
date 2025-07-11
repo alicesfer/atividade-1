@@ -9,5 +9,3 @@
 - HTML
 - CSS
 - JAVA SCRIPT
-
-- 
