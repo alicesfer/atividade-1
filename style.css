@@ -1,0 +1,148 @@
+/* Reset e config básicas */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: white;
+    --background-color: #121212;
+    --card-color: #1e1e1e;
+  }
+}
+
+:root {
+  --text-color: #4b0082;
+  --background-color: #f9f6ff;
+  --card-color: #ffffff;
+  --accent-color: #b19cd9;
+}
+
+body {
+  font-family: "Libertinus Mono", monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  padding: 2rem 1rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--accent-color);
+  text-shadow: 1px 1px 2px #ccc;
+}
+
+main {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+article {
+  background-color: var(--card-color);
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s forwards;
+}
+
+article:nth-child(1) {
+  animation-delay: 0.3s;
+}
+
+article:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+article header h2 {
+  font-size: 1.5rem;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+article header h2:hover {
+  transform: scale(1.05);
+  color: rebeccapurple;
+}
+
+article time {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+footer {
+  margin-top: 3rem;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+article::before {
+  content: "📖";
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  article header h2 {
+    font-size: 1.2rem;
+  }
+}
+/* Dark mode */
+:root {
+  --text-color: #4b0082;
+  --background-color: #f9f6ff;
+  --card-color: #ffffff;
+  --accent-color: #b19cd9;
+}
+
+body.dark {
+  --text-color: #f0eaff;
+  --background-color: #121212;
+  --card-color: #1e1e1e;
+  --accent-color: #bb86fc;
+}
+
+body {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Botão */
+#toggle-theme {
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--accent-color);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#toggle-theme:hover {
+  background-color: rebeccapurple;
+}
